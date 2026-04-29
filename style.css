@@ -1,0 +1,97 @@
+:root {
+    --color-success: #2ecc71;
+    --color-error: #e74c3c;
+    --color-warning: #f39c12;
+    --color-bg: #f4f7f6;
+    --color-text: #2c3e50;
+    --border-radius: 6px;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+form {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    /* İçindeki öğeleri (label, input, error) alt alta dizer */
+    align-items: flex-start;
+    /* Tüm öğeleri sola yaslar */
+}
+
+label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--color-text);
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+    outline: none;
+}
+.header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Durum Sınıfları */
+input.valid,
+textarea.valid {
+    border-color: var(--color-success);
+}
+
+input.invalid,
+textarea.invalid {
+    border-color: var(--color-error);
+}
+
+.error-message {
+    color: var(--color-warning);
+    font-size: 0.75rem;
+    margin-top: 4px;
+    min-height: 18px;
+    /* Layout shift'i engellemek için sabitledik */
+    display: block;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #95a5a6;
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    cursor: not-allowed;
+    transition: var(--transition);
+}
+
+button.is-valid {
+    background-color: var(--color-success);
+    cursor: pointer;
+}
